@@ -13,8 +13,18 @@ import { Skills } from "../utils/Data";
 
 export const MySkills = () => {
   return (
-    <PaddingContainer id="Skills" top="10%" bottom="10%">
-      <FlexContainer fullWidthChild>
+    <PaddingContainer
+      id="Skills"
+      top="10%"
+      bottom="10%"
+      responsiveLeft="1rem"
+      responsiveRight="1rem"
+    >
+      <FlexContainer
+        responsiveFlex
+        responsiveDirection="column-reverse"
+        fullWidthChild
+      >
         <SkillsCardContainer>
           {Skills.map((skill) => (
             <SkillsCard>

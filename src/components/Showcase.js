@@ -19,7 +19,7 @@ import BackgroundImg from "../assets/particle.png";
 
 export const Showcase = () => {
   const calculateExperience = () => {
-    const startDate = new Date("2020-08-01");
+    const startDate = new Date("2020-12-04");
     const currentDate = new Date();
     const timeDiff = currentDate - startDate;
     const years = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365.25));
@@ -42,7 +42,16 @@ export const Showcase = () => {
 
   const experience = calculateExperience();
   return (
-    <PaddingContainer id="Home" left="3%" right="10%" top="14%" bottom="10%">
+    <PaddingContainer
+      id="Home"
+      left="3%"
+      right="10%"
+      top="14%"
+      bottom="10%"
+      responsiveLeft="1rem"
+      responsiveRight="1rem"
+      responsiveTop="8rem"
+    >
       <FlexContainer align="center" fullWidthChild>
         <div>
           <Heading size="h2">Hello!</Heading>
@@ -53,12 +62,12 @@ export const Showcase = () => {
             I'm a Fullstack Developer
           </Heading>
           <ParaText>
-             My name full name is Miguel Antonio J. Anson and I am a fullstack developer with{" "}
-            {experience} worth of experience in learning, creating, and
-            designing websites and web applications.
+            My name full name is Miguel Antonio J. Anson and I am a fullstack
+            developer with {experience} worth of professional experience in
+            learning, creating, and designing websites and web applications.
           </ParaText>
 
-          <FlexContainer gap="20px">
+          <FlexContainer gap="20px" responsiveFlex>
             <IconContainer color="white" size="1.5rem">
               <BsLinkedin />
             </IconContainer>

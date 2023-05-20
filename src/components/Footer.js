@@ -33,7 +33,7 @@ export const Footer = () => {
               <FormLabel>Message:</FormLabel>
               <FormInput as="textarea" placeholder="Enter your message" />
             </PaddingContainer>
-            <FlexContainer justify="center">
+            <FlexContainer justify="center" responsiveFlex>
               <Button>Send Message</Button>
             </FlexContainer>
           </ContactForm>
