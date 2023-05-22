@@ -25,11 +25,23 @@ export const Footer = () => {
       .join("&");
   };
 
+  const isValidEmail = (email) => {
+    // Simple email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = (e) => {
-    console.log("Submitting form..."); // Add this line
-
     e.preventDefault();
+    if (!name || !email || !message) {
+      toast.error("Please fill in all fields");
+      return;
+    }
 
+    if (!isValidEmail(email)) {
+      toast.error("Please enter a valid email");
+      return;
+    }
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -76,11 +88,6 @@ export const Footer = () => {
             whileInView="visible"
             name="contact"
             method="POST"
-            // onSubmit={handleSubmit}
-            // onSubmit={(e) => {
-            //   e.preventDefault();
-            //   console.log("Form submitted!");
-            // }}
             netlify
           >
             <input type="hidden" name="form-name" value="contact" />
