@@ -7,13 +7,25 @@ import {
   MenuItem,
 } from "./../../styles/Navbar.styled";
 import { navLinks } from "../../utils/Data";
+import { motion } from "framer-motion";
+import { slideInRight } from "../../utils/Variants";
 
 export const NavMenu = ({ setOpenMenu }) => {
   return (
-    <NavMenuContainer>
+    <NavMenuContainer
+      as={motion.div}
+      variants={slideInRight}
+      initial="hidden"
+      whileInView="visible"
+      exit="exit"
+    >
       <PaddingContainer left="5%" right="5%" top="2rem">
         <FlexContainer justify="flex-end">
-          <MenuIcon onClick={() => setOpenMenu(false)}>
+          <MenuIcon
+            as={motion.a}
+            whileHover={{ scale: 1.2 }}
+            onClick={() => setOpenMenu(false)}
+          >
             <AiOutlineClose />
           </MenuIcon>
         </FlexContainer>
@@ -23,6 +35,8 @@ export const NavMenu = ({ setOpenMenu }) => {
         <FlexContainer direction="column" align="center" responsiveFlex>
           {navLinks.map((link) => (
             <MenuItem
+              as={motion.a}
+              whileHover={{ scale: 1.2 }}
               key={link.id}
               href={`#${link.href}`}
               onClick={() => setOpenMenu(false)}

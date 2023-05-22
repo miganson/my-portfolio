@@ -120,3 +120,16 @@ export const Button = styled.a`
     background-color: ${({ theme }) => theme.colors.white};
   }
 `;
+
+export const FadeImage = styled.img`
+  position: absolute;
+  top: ${({ top }) => top};
+  right: ${({ right }) => right};
+  left: ${({ left }) => left};
+  bottom: ${({ bottom }) => bottom};
+  z-index: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
+`;

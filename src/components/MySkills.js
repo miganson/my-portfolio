@@ -10,6 +10,8 @@ import React from "react";
 
 import { SkillsCard, SkillsCardContainer } from "../styles/MySkills.styled";
 import { Skills } from "../utils/Data";
+import { motion } from "framer-motion";
+import { fadeInLeftVariant, fadeInRightVariant } from "../utils/Variants";
 
 export const MySkills = () => {
   return (
@@ -25,7 +27,12 @@ export const MySkills = () => {
         responsiveDirection="column-reverse"
         fullWidthChild
       >
-        <SkillsCardContainer>
+        <SkillsCardContainer
+          as={motion.div}
+          variants={fadeInLeftVariant}
+          initial="hidden"
+          whileInView="visible"
+        >
           {Skills.map((skill) => (
             <SkillsCard>
               <IconContainer size="5rem" color="blue">
@@ -38,7 +45,11 @@ export const MySkills = () => {
           ))}
         </SkillsCardContainer>
 
-        <div>
+        <motion.div
+          variants={fadeInRightVariant}
+          initial="hidden"
+          whileInView="visible"
+        >
           <Heading as="h4" size="h4">
             MY SKILLS
           </Heading>
@@ -55,7 +66,7 @@ export const MySkills = () => {
             implement end-to-end solutions that meet the demands of modern web
             applications.
           </ParaText>
-        </div>
+        </motion.div>
       </FlexContainer>
     </PaddingContainer>
   );

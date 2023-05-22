@@ -32,7 +32,7 @@ export const ShowcaseImageCard = styled.div`
 `;
 
 export const Particle = styled.div`
-  positions: absolute;
+  position: absolute;
   top: ${({ top }) => top};
   left: ${({ left }) => left};
   bottom: ${({ bottom }) => bottom};

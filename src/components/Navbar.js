@@ -11,6 +11,7 @@ import React from "react";
 import { useState } from "react";
 import { NavMenu } from "./layouts/NavMenu";
 import { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -39,6 +40,8 @@ export const Navbar = () => {
               MJ<BlueText>A</BlueText>
             </Logo>
             <MenuIcon
+              as={motion.a}
+              whileHover={{ scale: 1.2 }}
               onClick={() => {
                 setOpenMenu(true);
               }}
@@ -47,8 +50,9 @@ export const Navbar = () => {
             </MenuIcon>
           </FlexContainer>
         </Container>
-
-        {openMenu && <NavMenu setOpenMenu={setOpenMenu} />}
+        <AnimatePresence>
+          {openMenu && <NavMenu setOpenMenu={setOpenMenu} />}
+        </AnimatePresence>
       </PaddingContainer>
     </NavbarContainer>
   );

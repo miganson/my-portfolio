@@ -1,7 +1,7 @@
 import { FaReact, FaNode, FaAngular, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript, SiExpress } from "react-icons/si";
 
-import Project3 from "../assets/Project1.png";
+import UnderConstruction from "../assets/Under-Construction.jpg";
 
 export const Skills = [
   {
@@ -42,9 +42,18 @@ export const projectDetails = [
     project_name: "Under Construction",
     project_desc: "Still working on these",
     tech_stack: ["React JS", "Node JS"],
-    project_img: Project3,
+    project_img: UnderConstruction,
     project_url: "https://youtu.be/jwSBE1EIevA",
     reverse: false,
+  },
+  {
+    id: 1,
+    project_name: "Under Construction",
+    project_desc: "Still working on these",
+    tech_stack: ["React JS", "Node JS"],
+    project_img: UnderConstruction,
+    project_url: "https://youtu.be/jwSBE1EIevA",
+    reverse: true,
   },
 ];
 

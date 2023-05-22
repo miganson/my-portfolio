@@ -16,6 +16,8 @@ import {
 } from "../styles/Showcase.styled";
 import ShowcaseImg from "../assets/showcase-image.png";
 import BackgroundImg from "../assets/particle.png";
+import { motion } from "framer-motion";
+import { fadeInLeftVariant, fadeInRightVariant } from "../utils/Variants";
 
 export const Showcase = () => {
   const calculateExperience = () => {
@@ -34,7 +36,11 @@ export const Showcase = () => {
 
     return (
       <React.Fragment>
-        {years} years, {months} months, and <BlinkingSpan>{days}</BlinkingSpan>{" "}
+        <BlueText>{years}</BlueText> years, <BlueText>{months}</BlueText>{" "}
+        months, and{" "}
+        <BlueText>
+          <BlinkingSpan>{days}</BlinkingSpan>
+        </BlueText>{" "}
         {dayText}
       </React.Fragment>
     );
@@ -46,14 +52,18 @@ export const Showcase = () => {
       id="Home"
       left="3%"
       right="10%"
-      top="14%"
+      top="18%"
       bottom="10%"
       responsiveLeft="1rem"
       responsiveRight="1rem"
       responsiveTop="8rem"
     >
       <FlexContainer align="center" fullWidthChild>
-        <div>
+        <motion.div
+          variants={fadeInLeftVariant}
+          initial="hidden"
+          whileInView="visible"
+        >
           <Heading size="h2">Hello!</Heading>
           <Heading size="h2" as="h2" top="0.5rem" bottom="1rem">
             I'm <BlueText>Migs Anson!</BlueText>
@@ -63,8 +73,9 @@ export const Showcase = () => {
           </Heading>
           <ParaText>
             My name full name is Miguel Antonio J. Anson and I am a fullstack
-            developer with {experience} worth of professional experience in
-            learning, creating, and designing websites and web applications.
+            developer with {experience} worth of{" "}
+            <BlueText>professional experience</BlueText> in learning, creating,
+            and designing websites and web applications.
           </ParaText>
 
           <FlexContainer gap="20px" responsiveFlex>
@@ -78,14 +89,27 @@ export const Showcase = () => {
               <BsInstagram />
             </IconContainer>
           </FlexContainer>
-        </div>
+        </motion.div>
 
-        <FlexContainer justify="flex-end">
+        <FlexContainer
+          justify="flex-end"
+          as={motion.div}
+          variants={fadeInRightVariant}
+          initial="hidden"
+          whileInView="visible"
+        >
           <ShowcaseParticleContainer>
             <ShowcaseImageCard>
               <img src={ShowcaseImg} alt="showcase" />
             </ShowcaseImageCard>
             <Particle
+              as={motion.img}
+              animate={{
+                x: [0, 100, 0],
+                rotate: 360,
+                scale: [1, 0.5, 1],
+              }}
+              transition={{ duration: 20, repeat: Infinity }}
               src={BackgroundImg}
               alt="particle"
               top="-80px"
@@ -93,13 +117,27 @@ export const Showcase = () => {
               rotate="60deg"
             />
             <Particle
+              as={motion.img}
+              animate={{
+                y: [0, 100, 0],
+                rotate: 360,
+                scale: [1, 0.8, 1],
+              }}
+              transition={{ duration: 18, repeat: Infinity }}
               src={BackgroundImg}
               alt="particle"
-              top="-50px"
-              right="70px"
-              rotate="00deg"
+              top="50px"
+              right="-70px"
+              rotate="0deg"
             />
             <Particle
+              as={motion.img}
+              animate={{
+                x: [0, -100, 0],
+                rotate: 360,
+                scale: [1, 0.9, 1],
+              }}
+              transition={{ duration: 15, repeat: Infinity }}
               src={BackgroundImg}
               alt="particle"
               bottom="10px"
