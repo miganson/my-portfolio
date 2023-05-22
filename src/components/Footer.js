@@ -9,6 +9,8 @@ import { ContactForm, FormLabel, FormInput } from "../styles/Footer.styled";
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeInBottomVariant } from "../utils/Variants";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Footer = () => {
   const [name, setName] = React.useState("");
@@ -33,8 +35,13 @@ export const Footer = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", name, email, message }),
     })
-      .then(() => alert("Message sent!"))
-      .catch((error) => alert(error));
+      .then(() => {
+        toast.success("Message sent!");
+      })
+      .catch((error) => {
+        toast.error("An error occurred.");
+        console.error(error);
+      });
   };
 
   return (
@@ -70,10 +77,10 @@ export const Footer = () => {
             name="contact"
             method="POST"
             // onSubmit={handleSubmit}
-            onSubmit={(e) => {
-              e.preventDefault();
-              console.log("Form submitted!");
-            }}
+            // onSubmit={(e) => {
+            //   e.preventDefault();
+            //   console.log("Form submitted!");
+            // }}
             netlify
           >
             <input type="hidden" name="form-name" value="contact" />
