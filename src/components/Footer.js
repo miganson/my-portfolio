@@ -11,6 +11,30 @@ import { motion } from "framer-motion";
 import { fadeInBottomVariant } from "../utils/Variants";
 
 export const Footer = () => {
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", name, email, message }),
+    })
+      .then(() => alert("Message sent!"))
+      .catch((error) => alert(error));
+  };
+
   return (
     <PaddingContainer id="Contact" top="5%" bottom="10%">
       <Heading
@@ -43,6 +67,7 @@ export const Footer = () => {
             whileInView="visible"
             name="contact"
             method="POST"
+            onSubmit={handleSubmit}
             netlify
           >
             <input type="hidden" name="form-name" value="contact" />
@@ -53,6 +78,7 @@ export const Footer = () => {
                 type="text"
                 name="name"
                 placeholder="Enter your name"
+                onChange={(e) => setName(e.target.value)}
               />
             </PaddingContainer>
 
@@ -62,6 +88,7 @@ export const Footer = () => {
                 type="email"
                 name="email"
                 placeholder="Enter your email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </PaddingContainer>
 
@@ -71,6 +98,7 @@ export const Footer = () => {
                 as="textarea"
                 name="message"
                 placeholder="Enter your message"
+                onChange={(e) => setMessage(e.target.value)}
               />
             </PaddingContainer>
 
