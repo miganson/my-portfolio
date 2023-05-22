@@ -24,6 +24,8 @@ export const Footer = () => {
   };
 
   const handleSubmit = (e) => {
+    console.log("Submitting form..."); // Add this line
+
     e.preventDefault();
 
     fetch("/", {
@@ -67,7 +69,11 @@ export const Footer = () => {
             whileInView="visible"
             name="contact"
             method="POST"
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log("Form submitted!");
+            }}
             netlify
           >
             <input type="hidden" name="form-name" value="contact" />
@@ -103,7 +109,9 @@ export const Footer = () => {
             </PaddingContainer>
 
             <FlexContainer justify="center" responsiveFlex>
-              <Button type="submit">Send Message</Button>
+              <Button type="button" onClick={handleSubmit}>
+                Send Message
+              </Button>
             </FlexContainer>
           </ContactForm>
         </FlexContainer>
