@@ -45,6 +45,7 @@ export const FlexContainer = styled.div`
 export const Heading = styled(PaddingContainer)`
   color: ${({ theme }) => theme.colors.white};
   text-align: ${({ align }) => align};
+  font-family: "sans-serif";
   font-size: ${({ size }) => {
     switch (size) {
       case "h1":
@@ -82,6 +83,7 @@ export const Heading = styled(PaddingContainer)`
 
 export const BlueText = styled.span`
   color: ${({ theme }) => theme.colors.secondary};
+  font-family: ${({ font }) => font};
 `;
 
 export const ParaText = styled(PaddingContainer)`

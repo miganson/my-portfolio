@@ -64,9 +64,14 @@ export const Showcase = () => {
           initial="hidden"
           whileInView="visible"
         >
-          <Heading size="h2">Hello!</Heading>
-          <Heading size="h2" as="h2" top="0.5rem" bottom="1rem">
-            I'm <BlueText>Migs Anson!</BlueText>
+          <Heading size="h2" font="sans-serif">Hello!</Heading>
+          <Heading
+            size="h2"
+            as="h2"
+            top="0.5rem"
+            bottom="1rem"
+          >
+            I'm <BlueText font="sans-serif">Migs Anson!</BlueText>
           </Heading>
           <Heading size="h3" as="h3">
             I'm a Fullstack Developer
