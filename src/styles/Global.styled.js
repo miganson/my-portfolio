@@ -87,6 +87,7 @@ export const BlueText = styled.span`
 export const ParaText = styled(PaddingContainer)`
   color: ${({ theme }) => theme.colors.para_text_color};
   line-height: 2rem;
+  padding-top: ${({ top }) => top};
 `;
 
 export const LinkText = styled.a`
@@ -136,6 +137,7 @@ export const FadeImage = styled.img`
   left: ${({ left }) => left};
   bottom: ${({ bottom }) => bottom};
   z-index: 0;
+  pointer-events: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: none;

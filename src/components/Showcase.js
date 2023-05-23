@@ -71,7 +71,7 @@ export const Showcase = () => {
           <Heading size="h3" as="h3">
             I'm a Fullstack Developer
           </Heading>
-          <ParaText>
+          <ParaText top="1rem">
             Hello there! I'm Miguel Antonio J. Anson, but you can call me Miguel
             or Migs. I've been diving into the world of full-stack development
             for {experience}. I love learning new things, crafting beautiful
@@ -79,10 +79,24 @@ export const Showcase = () => {
           </ParaText>
 
           <FlexContainer gap="20px" responsiveFlex>
-            <IconContainer color="white" size="1.5rem">
+            <IconContainer
+              color="white"
+              size="1.5rem"
+              as="a"
+              href="https://www.linkedin.com/in/miguel-anson/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <BsLinkedin />
             </IconContainer>
-            <IconContainer color="white" size="1.5rem">
+            <IconContainer
+              color="white"
+              size="1.5rem"
+              as="a"
+              href="https://www.linkedin.com/in/miguel-anson/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
               <BsInstagram />
             </IconContainer>
           </FlexContainer>

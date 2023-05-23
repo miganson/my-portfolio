@@ -10,13 +10,13 @@ import { Navbar } from "./components/Navbar";
 
 import TopFadeImage from "./assets/top.png";
 import LeftFadeImage from "./assets/left.png";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <MainBody>
-      <ToastContainer />
+        <ToastContainer />
         <Navbar />
         <Container>
           <Showcase />
