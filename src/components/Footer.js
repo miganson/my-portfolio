@@ -4,6 +4,8 @@ import {
   Heading,
   PaddingContainer,
   Button,
+  ParaText,
+  LinkText,
 } from "../styles/Global.styled";
 import { ContactForm, FormLabel, FormInput } from "../styles/Footer.styled";
 import React from "react";
@@ -13,7 +15,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const Footer = () => {
-  const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
 
@@ -33,7 +34,7 @@ export const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !email || !message) {
+    if (!email || !message) {
       toast.error("Please fill in all fields");
       return;
     }
@@ -45,7 +46,7 @@ export const Footer = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, message }),
+      body: encode({ "form-name": "contact", email, message }),
     })
       .then(() => {
         toast.success("Message sent!");
@@ -82,17 +83,7 @@ export const Footer = () => {
           >
             <input type="hidden" name="form-name" value="contact" />
 
-            <PaddingContainer bottom="2rem">
-              <FormLabel>Name:</FormLabel>
-              <FormInput
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                onChange={(e) => setName(e.target.value)}
-              />
-            </PaddingContainer>
-
-            <PaddingContainer bottom="2rem">
+            <PaddingContainer bottom="2rem" right="1rem">
               <FormLabel>Email:</FormLabel>
               <FormInput
                 type="email"
@@ -102,7 +93,7 @@ export const Footer = () => {
               />
             </PaddingContainer>
 
-            <PaddingContainer bottom="2rem">
+            <PaddingContainer bottom="2rem" right="1rem">
               <FormLabel>Message:</FormLabel>
               <FormInput
                 as="textarea"
@@ -119,6 +110,22 @@ export const Footer = () => {
             </FlexContainer>
           </ContactForm>
         </FlexContainer>
+        <PaddingContainer justify="center" top="2rem" as={motion.div}>
+          <ParaText
+            as={motion.div}
+            variants={fadeInBottomVariant}
+            initial="hidden"
+            whileInView="visible"
+            size="h2"
+            align="center"
+            top="0.5rem"
+          >
+            You can also reach me by email at{" "}
+            <LinkText href="mailto:miganson@gmail.com">
+              miganson@gmail.com
+            </LinkText>
+          </ParaText>
+        </PaddingContainer>
       </PaddingContainer>
     </PaddingContainer>
   );

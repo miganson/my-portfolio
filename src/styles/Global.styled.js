@@ -89,6 +89,13 @@ export const ParaText = styled(PaddingContainer)`
   line-height: 2rem;
 `;
 
+export const LinkText = styled.a`
+  color: ${({ theme }) => theme.colors.para_text_color};
+  line-height: 2rem;
+  text-decoration: underline; /* Optional: Add underline for link appearance */
+  cursor: pointer; /* Optional: Show pointer cursor on hover */
+`;
+
 export const IconContainer = styled.div`
   padding-top: 1rem;
   font-size: ${({ size }) => size};
