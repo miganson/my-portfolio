@@ -57,14 +57,17 @@ export const MySkills = () => {
             What <BlueText>I've learned to do</BlueText>
           </Heading>
 
-          <ParaText top="2rem" bottom="1.5rem">
-            As a Fullstack Developer, I have expertise in building dynamic and
-            responsive user interfaces using React and Angular, as well as
-            developing robust backend applications with Node.js and Express.js.
-            I also have experience working with cloud services such as AWS and
-            databases such as PostgreSQL and MongoDB, allowing me to design and
-            implement end-to-end solutions that meet the demands of modern web
-            applications.
+          <ParaText top="2rem">
+            My toolkit? Front-end frameworks like React and Angular for crafting
+            dynamic and responsive user interfaces. For the server side, I turn
+            to Node.js and Express.js, creating sturdy and reliable backend
+            applications
+          </ParaText>
+          <ParaText top="2rem">
+            I also have some hands-on experience with AWS for those cloud-based
+            needs, and PostgreSQL and MongoDB for managing data. From start to
+            finish, I'm all about designing and implementing solutions that
+            truly meet the needs of today's web applications.
           </ParaText>
         </motion.div>
       </FlexContainer>

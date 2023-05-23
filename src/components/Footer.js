@@ -63,21 +63,11 @@ export const Footer = () => {
         variants={fadeInBottomVariant}
         initial="hidden"
         whileInView="visible"
-        size="h4"
-        align="center"
-      >
-        MY CONTACT
-      </Heading>
-      <Heading
-        as={motion.h4}
-        variants={fadeInBottomVariant}
-        initial="hidden"
-        whileInView="visible"
         size="h2"
         align="center"
         top="0.5rem"
       >
-        Contact <BlueText>Me Here</BlueText>
+        Get <BlueText>In Touch</BlueText>
       </Heading>
       <PaddingContainer top="3rem">
         <FlexContainer justify="center">

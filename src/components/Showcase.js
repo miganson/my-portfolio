@@ -7,7 +7,7 @@ import {
   IconContainer,
 } from "../styles/Global.styled";
 import React from "react";
-import { BsLinkedin, BsFacebook, BsInstagram } from "react-icons/bs";
+import { BsLinkedin, BsInstagram } from "react-icons/bs";
 import {
   ShowcaseParticleContainer,
   BlinkingSpan,
@@ -72,18 +72,15 @@ export const Showcase = () => {
             I'm a Fullstack Developer
           </Heading>
           <ParaText>
-            My name full name is Miguel Antonio J. Anson and I am a fullstack
-            developer with {experience} worth of{" "}
-            <BlueText>professional experience</BlueText> in learning, creating,
-            and designing websites and web applications.
+            Hello there! I'm Miguel Antonio J. Anson, but you can call me Miguel
+            or Migs. I've been diving into the world of full-stack development
+            for {experience}. I love learning new things, crafting beautiful
+            websites, and designing functional web applications.
           </ParaText>
 
           <FlexContainer gap="20px" responsiveFlex>
             <IconContainer color="white" size="1.5rem">
               <BsLinkedin />
-            </IconContainer>
-            <IconContainer color="white" size="1.5rem">
-              <BsFacebook />
             </IconContainer>
             <IconContainer color="white" size="1.5rem">
               <BsInstagram />

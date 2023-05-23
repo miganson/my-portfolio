@@ -90,6 +90,7 @@ export const ParaText = styled(PaddingContainer)`
 `;
 
 export const IconContainer = styled.div`
+  padding-top: 1rem;
   font-size: ${({ size }) => size};
   cursor: pointer;
   color: ${({ color, theme }) => {
