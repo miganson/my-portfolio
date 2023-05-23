@@ -72,10 +72,11 @@ export const Showcase = () => {
             I'm a Fullstack Developer
           </Heading>
           <ParaText top="1rem">
-            Hello there! I'm Miguel Antonio J. Anson, but you can call me Miguel
-            or Migs. I've been diving into the world of full-stack development
-            for {experience}. I love learning new things, crafting beautiful
-            websites, and designing functional web applications.
+            Welcome! My full name is Miguel Antonio J. Anson, but you can call
+            me Miguel or Migs. I've been professionally immersed in the world of
+            full-stack development for {experience}. I love learning new things,
+            crafting beautiful websites, and designing functional web
+            applications.
           </ParaText>
 
           <FlexContainer gap="20px" responsiveFlex>
@@ -96,7 +97,7 @@ export const Showcase = () => {
               href="https://www.linkedin.com/in/miguel-anson/"
               target="_blank"
               rel="noopener noreferrer"
-              >
+            >
               <BsInstagram />
             </IconContainer>
           </FlexContainer>
