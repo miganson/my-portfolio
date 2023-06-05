@@ -24,7 +24,6 @@ function App() {
           <MyProjects />
           <Footer />
         </Container>
-
         <FadeImage src={TopFadeImage} top="0" />
         <FadeImage src={LeftFadeImage} top="30vh" />
       </MainBody>
