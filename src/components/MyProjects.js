@@ -33,7 +33,7 @@ export const MyProjects = () => {
         whileInView="visible"
         size="h2"
       >
-        These are projects <BlueText> I've worked on.</BlueText>
+        These are projects <BlueText> I've worked on</BlueText>
       </Heading>
 
       {projectDetails.map((project) => (
