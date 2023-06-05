@@ -2,8 +2,7 @@ import { FaReact, FaNode, FaAngular, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript, SiExpress } from "react-icons/si";
 
 import UnderConstruction from "../assets/Under-Construction.jpg";
-import WeatherForecast from "../assets/Weather-Forecast.png";
-
+import WeatherForecast from "../assets/Weather-Forecast.jpg";
 
 export const Skills = [
   {
@@ -46,6 +45,7 @@ export const projectDetails = [
     tech_stack: ["React JS", "Node JS", "Auth0 React"],
     project_img: WeatherForecast,
     project_url: "https://weather-forecast-app-m.netlify.app",
+    github_link: `https://github.com/miganson/weather-forecast-fend`,
     reverse: false,
   },
   {

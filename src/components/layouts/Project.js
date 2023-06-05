@@ -29,12 +29,14 @@ export const Project = ({ data }) => {
         whileInView="visible"
       >
         <FlexContainer align="center" gap="1rem">
-          <Heading as="h3" size="h3" bottom="1rem">
+          <Heading as="h3" size="h3">
             {data.project_name}
           </Heading>
-          <IconContainer color="blue" size="2rem">
-            <FaGithub />
-          </IconContainer>
+          <a href={data.github_link} target="_blank" rel="noopener noreferrer">
+            <IconContainer color="blue" size="2rem">
+              <FaGithub />
+            </IconContainer>
+          </a>
         </FlexContainer>
 
         <PaddingContainer top="1rem">
@@ -49,7 +51,13 @@ export const Project = ({ data }) => {
           {data.project_desc}
         </ParaText>
 
-        <Button>Visit Website</Button>
+        <Button
+          href={data.project_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit Website
+        </Button>
       </motion.div>
       <ProjectImageContainer
         as={motion.div}
